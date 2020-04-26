@@ -10,11 +10,12 @@
 </template>
 
 <script type="text/babel">
+// 需要先install countup.js 和vue-countup-v2
 import ICountUp from "vue-countup-v2";
 export default {
   name: "demo",
   components: {
-    ICountUp
+    ICountUp,
   },
   data() {
     return {
@@ -24,26 +25,26 @@ export default {
         separator: ",",
         decimal: ".",
         prefix: "",
-        suffix: ""
-      }
+        suffix: "",
+      },
     };
   },
   props: {
     endVal: {
       type: Number,
-      default: 30000
+      default: 30000,
     },
     delay: {
       type: Number,
-      default: 1000
-    }
+      default: 1000,
+    },
   },
   methods: {
     onReady: function(instance, CountUp) {
       const that = this;
       instance.update(that.endVal);
-    }
-  }
+    },
+  },
 };
 </script>
 
